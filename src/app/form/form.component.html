@@ -1,0 +1,26 @@
+
+
+
+<p> input RFC-3339 Formatted Date</p>
+
+<form [formGroup]='dateForm'>
+    
+    <ng-container *ngIf= "dateBeforeConvert !==null; ">
+        <div class="container">  
+            <div class="form-group">  
+
+              <input type="text" [(ngModel)]="dateBeforeConvert" formControlName="date" />  
+            </div>  
+            <div class="form-group">  
+              <button (click)="convertDate()" class="btn btn-dark"> convert date</button>  
+            </div>  
+           
+        </div>  
+    </ng-container>
+
+        <ng-container *ngIf="dateBeforeConvert ==null; ">
+           <h1>{{this.pesanError}}</h1>
+        </ng-container>
+
+    
+</form>
